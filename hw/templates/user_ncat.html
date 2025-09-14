@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Данные пользователей</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+
+    <!-- Заголовок -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Данные пользователей</h1>
+        <p class="text-muted">Заполни форму, чтобы добавить пользователя</p>
+    </div>
+
+    <!-- Форма -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-body">
+            <form method="post" action="/">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Имя</label>
+                    <input id="name" type="text" name="name" class="form-control" placeholder="Введите имя" required>
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">Город</label>
+                    <input id="city" type="text" name="city" class="form-control" placeholder="Введите город" required>
+                </div>
+                <div class="mb-3">
+                    <label for="hobby" class="form-label">Хобби</label>
+                    <input id="hobby" type="text" name="hobby" class="form-control" placeholder="Введите хобби" required>
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Возраст</label>
+                    <input id="age" type="number" name="age" class="form-control" placeholder="Введите возраст" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Список пользователей -->
+    <h2 class="mb-4">Пользователи</h2>
+    <div class="row g-4">
+        {% for user in users %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h4 class="card-title">{{ user.name }}</h4>
+                    <p class="card-text"><strong>Город:</strong> {{ user.city }}</p>
+                    <p class="card-text"><strong>Хобби:</strong> {{ user.hobby }}</p>
+                    <p class="card-text"><strong>Возраст:</strong> {{ user.age }}</p>
+                </div>
+            </div>
+        </
+
+Нейрокот, [9/14/25 1:08 PM]
+div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
